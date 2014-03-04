@@ -1,0 +1,162 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  background-color: #272822;
+  color: white;
+  height: 100%;
+  overflow: hidden; }
+
+#root {
+  height: 100%; }
+  #root ul {
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+  #root .button {
+    color: #6e6e6e;
+    font: bold 12px Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    padding: 7px 12px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 1px 0 #fff;
+    -webkit-transition: border-color .218s;
+    -moz-transition: border .218s;
+    -o-transition: border-color .218s;
+    transition: border-color .218s;
+    background: #f3f3f3;
+    background: -webkit-gradient(linear, 0% 40%, 0% 70%, from(whitesmoke), to(#f1f1f1));
+    background: -moz-linear-gradient(linear, 0% 40%, 0% 70%, from(whitesmoke), to(#f1f1f1));
+    border: solid 1px #dcdcdc;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    margin-right: 10px; }
+  #root .button:hover {
+    color: #333;
+    border-color: #999;
+    -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); }
+  #root .button:active {
+    color: #000;
+    border-color: #444; }
+  #root .errors {
+    width: 1em;
+    color: red; }
+  #root .CodeMirror-scroll {
+    height: 100%; }
+  #root .nav-wrapper {
+    background-color: #efefef;
+    color: #8f8f8f;
+    height: 50px;
+    position: relative; }
+    #root .nav-wrapper #logo {
+      display: inline;
+      padding-right: 100px;
+      bottom: 25%;
+      position: relative; }
+      #root .nav-wrapper #logo #name {
+        font-size: 2em;
+        font-family: Consolas, monaco, monospace; }
+    #root .nav-wrapper #logo:hover {
+      cursor: pointer; }
+    #root .nav-wrapper #nav-list {
+      display: inline-block; }
+      #root .nav-wrapper #nav-list ul {
+        height: 50px; }
+        #root .nav-wrapper #nav-list ul li {
+          float: left;
+          height: 100%;
+          padding: 0 5px; }
+          #root .nav-wrapper #nav-list ul li p {
+            display: block;
+            margin: 16.66667px 5px; }
+        #root .nav-wrapper #nav-list ul li:hover {
+          cursor: pointer;
+          background-color: #272822;
+          color: white; }
+    #root .nav-wrapper #gdrive {
+      float: right;
+      height: 70%;
+      top: 15%;
+      position: relative; }
+      #root .nav-wrapper #gdrive #fname {
+        position: relative;
+        top: 5%;
+        min-width: 20px;
+        font-size: 20px;
+        padding: 5px;
+        border: 1px solid;
+        display: inline-block; }
+      #root .nav-wrapper #gdrive #fname:hover, #root .nav-wrapper #gdrive #fname:focus {
+        color: #333;
+        border-color: #999; }
+      #root .nav-wrapper #gdrive #fname:focus {
+        outline: none; }
+      #root .nav-wrapper #gdrive #login {
+        width: 182px;
+        height: 40px; }
+      #root .nav-wrapper #gdrive #login:hover {
+        cursor: pointer; }
+  #root .editor {
+    position: relative;
+    float: left; }
+  #root .editor, #root .feedback-wrapper {
+    width: 50%;
+    height: 100%;
+    display: inline-block; }
+  #root .feedback-wrapper {
+    background-color: white;
+    overflow: auto; }
+    #root .feedback-wrapper .subnav {
+      background-color: #272822;
+      height: 25px;
+      width: 100%;
+      position: fixed; }
+      #root .feedback-wrapper .subnav ul {
+        display: inline-block; }
+        #root .feedback-wrapper .subnav ul li {
+          float: left;
+          padding: 5px; }
+        #root .feedback-wrapper .subnav ul li:hover {
+          background-color: #efefef;
+          color: #8f8f8f;
+          cursor: pointer; }
+    #root .feedback-wrapper .console-wrapper {
+      font-family: monospace; }
+      #root .feedback-wrapper .console-wrapper .console-messages {
+        height: 100%;
+        width: 100%;
+        white-space: pre-line;
+        margin-top: 25px; }
+        #root .feedback-wrapper .console-wrapper .console-messages div {
+          border-bottom: 1px dashed lightgray; }
+        #root .feedback-wrapper .console-wrapper .console-messages .log {
+          color: gray; }
+        #root .feedback-wrapper .console-wrapper .console-messages .eval {
+          color: green; }
+        #root .feedback-wrapper .console-wrapper .console-messages .stdout {
+          color: black; }
+        #root .feedback-wrapper .console-wrapper .console-messages .stderr {
+          color: red; }
+        #root .feedback-wrapper .console-wrapper .console-messages .timestamp {
+          float: right;
+          color: blue;
+          margin-right: 2px;
+          font-size: 0.75em; }
+      #root .feedback-wrapper .console-wrapper .console-prompt {
+        display: inline-block;
+        min-width: 100%;
+        background-color: white; }
+        #root .feedback-wrapper .console-wrapper .console-prompt .prompt {
+          color: blue; }
+        #root .feedback-wrapper .console-wrapper .console-prompt #console-input {
+          -webkit-user-modify: read-write-plaintext-only;
+          -moz-user-modify: read-write;
+          background-color: white;
+          color: black;
+          min-width: 10px;
+          display: inline-block; }
+        #root .feedback-wrapper .console-wrapper .console-prompt #console-input:focus {
+          outline: none; }

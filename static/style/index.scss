@@ -1,0 +1,219 @@
+$main-bgcolor: #272822;
+$main-color: white;
+
+$second-bgcolor: #efefef;
+$second-color: #8f8f8f;
+
+$nav-height: 50px;
+$subnav-height: 25px;
+
+$gdrive_save: #4285F4;
+
+html, body{
+	padding: 0;
+	margin: 0;
+	background-color: $main-bgcolor;
+	color: $main-color;
+	height: 100%;
+	overflow: hidden;
+}
+#root{
+	height: 100%;
+	ul{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	.button {
+	    color: #6e6e6e;
+	    font: bold 12px Helvetica, Arial, sans-serif;
+	    text-decoration: none;
+	    padding: 7px 12px;
+	    position: relative;
+	    display: inline-block;
+	    text-shadow: 0 1px 0 #fff;
+	    -webkit-transition: border-color .218s;
+	    -moz-transition: border .218s;
+	    -o-transition: border-color .218s;
+	    transition: border-color .218s;
+	    background: #f3f3f3;
+	    background: -webkit-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
+	    background: -moz-linear-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
+	    border: solid 1px #dcdcdc;
+	    border-radius: 2px;
+	    -webkit-border-radius: 2px;
+	    -moz-border-radius: 2px;
+	    margin-right: 10px;
+	}
+	.button:hover {
+	    color: #333;
+	    border-color: #999;
+	    -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); 
+		-webkit-box-shadow:0 2px 5px rgba(0, 0, 0, 0.2);
+	    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	}
+	.button:active {
+	    color: #000;
+	    border-color: #444;
+	}
+
+
+	.errors{
+		width: 1em;
+		color: red;
+	}
+
+	.CodeMirror-scroll{
+		height: 100%;
+	}
+	.nav-wrapper{
+		background-color: $second-bgcolor;
+		color: $second-color;
+		height: $nav-height;
+		position: relative;
+		#logo{
+			display: inline;
+			padding-right: 100px;
+			bottom: 25%;
+			position: relative;
+			#name{
+				font-size: 2em;
+				font-family: Consolas, monaco, monospace;
+			}
+		}
+		#logo:hover{
+			cursor: pointer;
+		}
+		#nav-list{
+			display: inline-block;
+			ul{
+				height: $nav-height;
+				li{
+					float: left;
+					height: 100%;
+					padding: 0 5px;
+
+					p{
+						display: block;
+						margin: $nav-height/3 5px;
+					}
+				}
+				li:hover{
+					cursor: pointer;
+					background-color: $main-bgcolor;
+					color: $main-color
+				}
+			}
+		}
+		#gdrive{
+			float: right;
+			height: 70%;
+			top: 15%;
+			position: relative;
+			#fname{
+				position: relative;
+				top: 5%;
+				min-width: 20px;
+				font-size: 20px;
+				padding: 5px;
+				border: 1px solid;
+				display: inline-block;
+			}
+			#fname:hover, #fname:focus{
+			    color: #333;
+			    border-color: #999;
+			}
+			#fname:focus{
+				outline: none;
+			}
+			#login{
+				width: 182px;
+				height: 40px;
+			}
+			#login:hover{
+				cursor: pointer;
+			}
+		}
+	}
+
+	.editor{
+		position: relative;
+		float: left;
+	}
+	.editor, .feedback-wrapper{
+		width: 50%;
+		height: 100%;
+		display: inline-block;
+	}
+	.feedback-wrapper{
+		background-color: $main-color;
+		overflow: auto;
+
+		.subnav {
+			background-color: $main-bgcolor;
+			height: $subnav-height;
+			width: 100%;
+			position: fixed;
+
+			ul{
+				display: inline-block;
+
+				li{
+					float: left;
+					padding: 5px;
+				}
+				li:hover{
+					background-color: $second-bgcolor;
+					color: $second-color;
+					cursor: pointer;
+				}
+			}
+		}
+		.console-wrapper{
+			font-family: monospace;
+
+			.console-messages{
+				height: 100%;
+				width: 100%;
+				white-space: pre-line;
+				margin-top: $subnav-height;
+
+				div{
+					border-bottom: 1px dashed lightgray;
+				}
+				.log{ color: gray; }
+				.eval{ color: green; }
+				.stdout{ color: black; }
+				.stderr{ color: red; }
+				.timestamp{
+					float: right;
+					color: blue;
+					margin-right: 2px;
+					font-size: 0.75em;
+				}
+			}
+			.console-prompt{
+				display: inline-block;
+				min-width: 100%;
+				background-color: white;
+
+				.prompt{
+					color: blue;
+				}
+				#console-input{
+					-webkit-user-modify: read-write-plaintext-only;
+					-moz-user-modify: read-write;
+
+					background-color: white;
+					color: black;
+					min-width: 10px;
+					display: inline-block;				
+				}
+				#console-input:focus{
+					outline: none;
+				}
+			}
+		}
+	}
+}
