@@ -25,7 +25,7 @@ model = {'src': '', 'author': None, 'date':None}
 class Fiddle(ndb.Model):
 	"""Database model"""
 	author = ndb.UserProperty()
-	src = ndb.StringProperty()
+	src = ndb.TextProperty()
 	created = ndb.DateTimeProperty()
 	modified = ndb.DateTimeProperty()
 

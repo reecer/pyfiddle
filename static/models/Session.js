@@ -15,9 +15,21 @@ App.Session = Backbone.Model.extend({
 		this.on('stdout', this.onout.bind(this, 'stdout'));
 		this.on('stderr', this.onout.bind(this, 'stderr'));
 		this.on('eval', this.oneval, this);
+		var self = this;
+		this.on('load', function(){
+			App.session.feedback.push('Loading analyzer');		
+			$.ajax('/static/py/pypiler.py',{
+				success: function(data, status){
+					self.eval(data);
+				},
+				error: function(e){
+				  throw e;
+				}
+			});
+		});
 		this.on('init', function(){
-			App.root.feedback.push('Connected!');
-		})
+			App.session.feedback.push('Loaded. Get coding!');
+		});
 	},
 	initWorker: function(){
 		this.worker = new Worker("/static/py/worker.js");

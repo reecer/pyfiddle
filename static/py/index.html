@@ -7,7 +7,7 @@
         var input = document.getElementById('input')
           , output = document.getElementById('output')
           , button = document.getElementById('button')
-          , worker = new Worker('worker.js')
+          // , worker = new Worker('worker.js')
           , loaded = false
           , handler = function (e) {
             if (!loaded) {
@@ -17,15 +17,23 @@
               button.disabled = false;
               return;
             }
-            output.value += e.data;
+            var data = JSON.parse(e.data);
+            output.value += data.data;
+
           };
 
 
-        worker.addEventListener('message', handler, false);
+        // worker.addEventListener('message', handler, false);
 
         button.onclick = function() {
-          worker.postMessage(input.value);
+          // worker.postMessage(input.value);
         };
+
+        Python.initialize(null, function(chr) {
+          if(chr !== null) send('stdout',  String.fromCharCode(chr));
+        }, function(chr){
+          if(chr !== null) send('stderr', String.fromCharCode(chr));
+        });
       };
       window.onload = start;
     </script>
@@ -36,5 +44,6 @@
     <input disabled="true" id="button" type="button" value="loading........." style="display: block; margin: auto" />
     <textarea id="output" style="font-family: monospace; width: 80%" rows="8"></textarea>
     <hr>
+    <script src="python.opt.js"></script>
   </body>
 </html>

@@ -17,17 +17,20 @@
 	function send(eventName, eventData){
 		postMessage(JSON.stringify({type:eventName, data:eventData}));
 	}
-
+	var first = true;
 	var msgHandler = function (e) {
 		if (Python.isFinished(e.data)) {
 			var result = Python.eval(e.data);
 			if (result !== null && result !== undefined) {
 				send('eval', result);
+			}else if(first){
+				first = false;
+				send('init')
 			}
 		}
 	};  
 
 	addEventListener('message', msgHandler, false);
 
-	send('init');
+	send('load');
 })();
